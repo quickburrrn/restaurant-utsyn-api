@@ -1,0 +1,30 @@
+CREATE TABLE `Bruker` (
+  `BrukerID` INT,
+  `Fornavn` VARCHAR(20),
+  `Etternavn` VARCHAR(25),
+  `Email` VARCHAR(30),
+  `Kjønn` VARCHAR(10),
+  PRIMARY KEY (`BrukerID`)
+);
+
+CREATE TABLE `Drikker` (a
+  `DrikkerID` INT,
+  `Navn` VARCHAR(25),
+  `Koffein` Float,
+  `Produsent` VARCHAR(25),
+  `Kostnad` Float,
+  `Volum` INT,
+  PRIMARY KEY (`DrikkerID`)
+);
+
+CREATE TABLE `Tilbakemelding` (
+  `TilbakemeldingID` INT,
+  `Review` VARCHAR(300),
+  `Bruker_ID` INT,
+  `Produkt_ID` INT,
+  `Terningskast` INT,
+  PRIMARY KEY (`TilbakemeldingID`),
+  FOREIGN KEY (`Produkt_ID`) REFERENCES `Drikker`(`DrikkerID`),
+  FOREIGN KEY (`Bruker_ID`) REFERENCES `Bruker`(`BrukerID`)
+);
+
