@@ -26,7 +26,7 @@ CREATE TABLE `Reservasjoner` (
   `ReservasjonsID` INT AUTO_INCREMENT,
   `Dato` DATE,
   `Tid` TIME,
-  `Antall gjester` INT,
+  `Antall_gjester` INT,
   `Fornavn` VARCHAR(45),
   `Etternavn` VARCHAR(45),
   `Telefonnummer` VARCHAR(10),
