@@ -1,0 +1,38 @@
+CREATE TABLE `Ansatte` (
+  `AnsattID` INT AUTO_INCREMENT,
+  `Rolle` VARCHAR(25),
+  `Fornavn` VARCHAR(25),
+  `Etternavn` VARCHAR(25),
+  `Brukernavn` VARCHAR(25),
+  `Passord` VARCHAR(40),
+  PRIMARY KEY (`AnsattID`)
+);
+
+CREATE TABLE `Åpningstid` (
+  `ÅpningstidID` INT,
+  `Dag` VARCHAR(10),
+  `Åpningstid` TIME,
+  `Stengetid` TIME,
+  PRIMARY KEY (`ÅpningstidID`)
+);
+
+CREATE TABLE `Bord` (
+  `BordID` INT,
+  `Kapasitet` INT,
+  PRIMARY KEY (`BordID`)
+);
+
+CREATE TABLE `Reservasjoner` (
+  `ReservasjonsID` INT AUTO_INCREMENT,
+  `Dato` DATE,
+  `Tid` TIME,
+  `Antall gjester` INT,
+  `Fornavn` VARCHAR(45),
+  `Etternavn` VARCHAR(45),
+  `Telefonnummer` VARCHAR(10),
+  `Epost` VARCHAR(45),
+  `BordID` INT,
+  PRIMARY KEY (`ReservasjonsID`),
+  FOREIGN KEY (`BordID`) REFERENCES `Bord`(`BordID`)
+);
+
