@@ -20,6 +20,7 @@ app.get('/', (req,res) =>
 //eksempel på querry
 app.get('/bruker', (req, res)=>{
     //det var så langt jeg kom
+    // HEllo worlds
 })
 
 app.listen(8001, ()=>
