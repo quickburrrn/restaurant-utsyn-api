@@ -14,7 +14,7 @@ const db = mysql.createConnection({
 
 app.get('/', (req,res) => 
 {
-    return res.json("Resturant-utsyn databse");
+    return res.json("Velkomen til Resturant-utsyn databse ");
 });
 
 //eksempel på querry
