@@ -27,8 +27,8 @@ app.get('/reservasjoner', (req, res)=>{
 })
 
 app.get('/addbord', (req, res)=>{
-    [test] = req;
-    const sql = "SELECT * FROM reservasjoner";
+    [BordId, kapasitet] = req;
+    const sql = "INSERT INTO bord(BordID, Kapasitet) VALUES ("+BordId+", "+kapasitet+")";
     db.query(sql, (err, data)=>
     {
         if(err) return res.json(err);
