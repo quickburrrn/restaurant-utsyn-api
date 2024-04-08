@@ -2,7 +2,7 @@ CREATE TABLE `Bruker` (
   `BrukerID` INT,
   `Fornavn` VARCHAR(20),
   `Etternavn` VARCHAR(25),
-  `Email` VARCHAR(30),
+  `Email` VARCHAR(40),
   `Kjønn` VARCHAR(10),
   PRIMARY KEY (`BrukerID`)
 );
