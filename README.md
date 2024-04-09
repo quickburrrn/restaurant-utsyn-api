@@ -8,6 +8,7 @@ npm install express
 npm install nodemon -D
 npm install mysql
 npm install cors
+npm install body-parser
 ```
 
 last ned xampp
