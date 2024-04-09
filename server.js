@@ -49,14 +49,23 @@ app.post('/bord',function(req, res){
 //     return res.json(req.body)
 // });
 
-app.post('/reservasjon', (req, res)=>{
-    const {Dato = '2024-04-10', Tid = '19:30:00', Antall_gjester = 4, Fornavn='none', Etternavn='none', Telefonnummer='12345678', Epost='none@none.com', BordID=1} = req
-    const sql = `INSERT INTO Reservasjoner (Dato, Tid, Antall_gjester, Fornavn, Etternavn, Telefonnummer, Epost, BordID) VALUES (${Dato}, ${Tid}, ${Antall_gjester}, ${Fornavn}, ${Etternavn}, ${Telefonnummer}, ${Epost}, ${BordID})`;
-    db.query(sql, (err, data)=>
+app.post('/reservasjon', function(req, res){
+    const sql = `INSERT INTO Reservasjoner (Dato, Tid, Antall_gjester, Fornavn, Etternavn, Telefonnummer, Epost, BordID) VALUES (?)`;
+    const values = [
+        req.body.Dato,
+        req.body.Tid,
+        req.body.Antall_gjester,
+        req.body.Fornavn,
+        req.body.Etternavn,
+        req.body.Telefonnummer,
+        req.body.Epost,
+        req.body.BordID
+    ];
+    db.query(sql, [values], (err, data) =>
     {
         if(err) return res.json(err);
         return res.json(data);
-    })
+    });
 });
 
 app.listen(8001, ()=>
