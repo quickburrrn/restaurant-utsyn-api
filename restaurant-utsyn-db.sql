@@ -16,23 +16,15 @@ CREATE TABLE `Åpningstid` (
   PRIMARY KEY (`ÅpningstidID`)
 );
 
-CREATE TABLE `Bord` (
-  `BordID` INT,
-  `Kapasitet` INT,
-  PRIMARY KEY (`BordID`)
-);
-
 CREATE TABLE `Reservasjoner` (
   `ReservasjonsID` INT AUTO_INCREMENT,
   `Dato` DATE,
   `Tid` TIME,
-  `Antall_gjester` INT,
+  `Antall gjester` INT,
   `Fornavn` VARCHAR(45),
   `Etternavn` VARCHAR(45),
   `Telefonnummer` VARCHAR(10),
   `Epost` VARCHAR(45),
-  `BordID` INT,
-  PRIMARY KEY (`ReservasjonsID`),
-  FOREIGN KEY (`BordID`) REFERENCES `Bord`(`BordID`)
+  `ExtraInfo` VARCHAR(250),
+  PRIMARY KEY (`ReservasjonsID`)
 );
-

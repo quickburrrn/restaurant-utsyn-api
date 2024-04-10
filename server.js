@@ -28,29 +28,8 @@ app.get('/reservasjoner', (req, res)=>{
     })
 });
 
-app.post('/bord',function(req, res){
-    const sql = "INSERT INTO bord(`BordID`, `Kapasitet`) VALUES (?)";
-    const values = [
-        req.body.BordID,
-        req.body.Kapasitet
-    ];
-    db.query(sql, [values], (err, data) =>
-    {
-        if(err) return res.json(err);
-        return res.json(data);
-    });
-});
-
-// app.get('/bord', (req, res)=>{
-//     const values = [
-//         req.BordID = "3",
-//         req.Kapasitet = "3"
-//     ]
-//     return res.json(req.body)
-// });
-
 app.post('/reservasjon', function(req, res){
-    const sql = `INSERT INTO Reservasjoner (Dato, Tid, Antall_gjester, Fornavn, Etternavn, Telefonnummer, Epost, BordID) VALUES (?)`;
+    const sql = `INSERT INTO Reservasjoner (Dato, Tid, Antall_gjester, Fornavn, Etternavn, Telefonnummer, Epost, ExtraInfo) VALUES (?)`;
     const values = [
         req.body.Dato,
         req.body.Tid,
@@ -59,7 +38,7 @@ app.post('/reservasjon', function(req, res){
         req.body.Etternavn,
         req.body.Telefonnummer,
         req.body.Epost,
-        req.body.BordID
+        req.body.ExtraInfo
     ];
     db.query(sql, [values], (err, data) =>
     {
