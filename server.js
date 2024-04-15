@@ -29,10 +29,9 @@ app.get('/reservasjoner', (req, res)=>{
 });
 
 app.post('/reservasjon', function(req, res){
-    const sql = `INSERT INTO Reservasjoner (Dato, Tid, Antall_gjester, Fornavn, Etternavn, Telefonnummer, Epost, ExtraInfo) VALUES (?)`;
+    const sql = `INSERT INTO Reservasjoner (Dato, Antall_gjester, Fornavn, Etternavn, Telefonnummer, Epost, ExtraInfo) VALUES (?)`;
     const values = [
         req.body.Dato,
-        req.body.Tid,
         req.body.Antall_gjester,
         req.body.Fornavn,
         req.body.Etternavn,
