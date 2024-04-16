@@ -23,7 +23,7 @@ app.get('/', (req,res) =>
 });
 
 app.get('/reservasjoner', (req, res)=>{
-    const sql = "SELECT * FROM reservasjoner";
+    const sql = "SELECT * FROM Reservasjoner";
     db.query(sql, (err, data)=>
     {
         if(err) return res.json(err);

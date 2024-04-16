@@ -10,3 +10,21 @@ SELECT * FROM `reservasjoner`
 
 
 "dev": "nodemon server.js"
+
+
+
+i postman
+
+post
+restaurant-utsyn-api.vercel.app/reservasjon
+
+body json
+{
+    "Dato": "2024-04-10",
+    "Antall_gjester": "4",
+    "Fornavn": "Andre",
+    "Etternavn": "Hansen",
+    "Telefonnummer": "12345678",
+    "Epost": "email",
+    "ExtraInfo": "extra"
+}
