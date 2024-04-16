@@ -7,3 +7,6 @@ INSERT INTO bord(BordID, Kapasitet) VALUES (1, 3)
 
 Se alle reservasjoner
 SELECT * FROM `reservasjoner`
+
+
+"dev": "nodemon server.js"
