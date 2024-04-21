@@ -27,7 +27,7 @@ app.get('/reservasjoner', (req, res)=>{
     db.query(sql, (err, data)=>
     {
         if(err){ res.send("falied"); return res.json(err)};
-        return res.json(data);
+        return res.json({"message" : "approved"});
     })
     res.send("approved")
 });
