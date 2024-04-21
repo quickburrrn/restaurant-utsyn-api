@@ -44,7 +44,7 @@ app.post('/reservasjon', function(req, res){
     ];
     db.query(sql, [values], (err, data) =>
     {
-        if(err) return res.json(err);
+        if(err) return res.json("err");
         return res.json("approved");
     });
 });
