@@ -26,9 +26,10 @@ app.get('/reservasjoner', (req, res)=>{
     const sql = "SELECT * FROM Reservasjoner";
     db.query(sql, (err, data)=>
     {
-        if(err) return res.json(err);
+        if(err){ res.send("falied"); return res.json(err)};
         return res.json(data);
     })
+    res.send("approved")
 });
 
 app.post('/reservasjon', function(req, res){
